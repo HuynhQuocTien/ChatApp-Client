@@ -8,17 +8,21 @@ import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
-    <>
-      <Sidebar />
-      <ChatArea />
-    </>
-    // <BrowserRouter>
-    // <Navigate />
-    //   <Routes>
-    //     <Route path="/register" element={<Register />} />
-    //     <Route path="/login" element={<Login />} />
-    //   </Routes>
-    // </BrowserRouter>
+    <BrowserRouter>
+      <Navigate />
+      <Routes>
+        <Route path="/register" element={<Register />}> </Route>
+
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/chat" element={
+          <div className='chat-container'>
+            <Sidebar />
+            <ChatArea />
+          </div>
+        }>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
