@@ -25,6 +25,8 @@ const BASE_URL = 'http://127.0.0.1:8000/';
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                const token = data.token;
+                document.cookie = `token=${token}; path=/`;
             })
             .catch((error) => {
                 console.error('Error:', error);
